@@ -2,7 +2,7 @@
 
 Common packages for handling HTTP requests and returning responses
 
-## pkg/http/handler
+## handler
 
 ### handler.New
 
@@ -12,7 +12,7 @@ function that implements the http.Handler interface for use with the `net/http` 
 This allows for a much simpler handler function that just has to return a response instead of having the responsibility 
 of writing that response to the response writer.
 
-## pkg/http/middleware
+## middleware
 
 Some common middleware for use with the `net/http` package.
 
@@ -32,7 +32,7 @@ has been processed a log entry will be written with additional context including
 Returns a middleware handler that adds a request ID to the request context. This request ID will be from the request 
 headers, or generated if not present.
 
-## pkg/http/response
+## response
 
 ### response.New
 
@@ -69,8 +69,10 @@ Set additional metadata. This attribute will be passed through the JSON Marshall
 
 Build and return the JSON `Response` from the `ErrorDetails`.
 
-## pkg/http/query
+## query
 
 ### query.NewValidator
 
-Query validator can validate a map of validation rules against a request query `url.Values`.
+Query validator can validate a map of validation rules against a request query `url.Values`. The validation rules need 
+to be supported by `github.com/go-playground/validator`: 
+https://pkg.go.dev/github.com/go-playground/validator/v10#readme-fields

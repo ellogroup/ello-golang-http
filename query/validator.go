@@ -13,8 +13,8 @@ type Validator struct {
 	validate Var
 }
 
-func NewValidator(v *validator.Validate) *Validator {
-	return &Validator{validate: v}
+func NewValidator() *Validator {
+	return &Validator{validate: validator.New()}
 }
 
 func (v Validator) Validate(q url.Values, rules map[string]string) map[string]error {

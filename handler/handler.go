@@ -1,8 +1,8 @@
 package handler
 
 import (
-	"github.com/ellogroup/ello-golang-http/pkg/http/middleware"
-	"github.com/ellogroup/ello-golang-http/pkg/http/response"
+	"github.com/ellogroup/ello-golang-http/middleware"
+	"github.com/ellogroup/ello-golang-http/response"
 	"go.uber.org/zap"
 	"net/http"
 )
