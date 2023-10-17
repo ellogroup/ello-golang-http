@@ -1,4 +1,4 @@
-package validate
+package query
 
 import (
 	"errors"
@@ -17,7 +17,7 @@ func (m *validateMock) Var(field interface{}, tag string) error {
 	return args.Error(0)
 }
 
-func TestQueryValidator_Validate(t *testing.T) {
+func TestValidator_Validate(t *testing.T) {
 
 	type validateResponse struct {
 		fieldInput interface{}
@@ -106,7 +106,7 @@ func TestQueryValidator_Validate(t *testing.T) {
 				m.On("Var", v.fieldInput, v.tagInput).Return(v.errOut)
 			}
 
-			v := QueryValidator{
+			v := Validator{
 				validate: m,
 			}
 			assert.Equalf(t, tt.want, v.Validate(tt.args.q, tt.args.rules), "Validate(%v, %v)", tt.args.q, tt.args.rules)

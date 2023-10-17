@@ -68,3 +68,9 @@ Set additional metadata. This attribute will be passed through the JSON Marshall
 #### func (ErrorDetails) JsonResponse() Response
 
 Build and return the JSON `Response` from the `ErrorDetails`.
+
+## pkg/http/query
+
+### query.NewValidator
+
+Query validator can validate a map of validation rules against a request query `url.Values`.
