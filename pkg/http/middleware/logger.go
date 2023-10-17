@@ -54,8 +54,8 @@ func NewZapLoggerMiddleware(log *zap.Logger) func(http.Handler) http.Handler {
 				requestLog.Info(
 					"Request complete",
 					zap.Int("status_code", ww.Status()),
-					zap.Int("duration_ms", int(time.Since(requestStart).Milliseconds())),
 					zap.Int("bytes_written", ww.BytesWritten()),
+					zap.Duration("duration", time.Since(requestStart)),
 				)
 			}()
 
