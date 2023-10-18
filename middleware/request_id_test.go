@@ -47,7 +47,11 @@ func TestNewRequestIdMiddleware(t *testing.T) {
 
 			sut(next).ServeHTTP(writerMock, r)
 
-			assert.Regexpf(t, tt.wantMatch, ctx.Value(RequestIDCtxKey).(string), "NewRequestIdMiddleware()")
+			if !assert.Regexpf(t, tt.wantMatch, headers.Get(RequestIDHeader), "NewRequestIdMiddleware() response header") {
+				return
+			}
+
+			assert.Regexpf(t, tt.wantMatch, ctx.Value(RequestIDCtxKey).(string), "NewRequestIdMiddleware() context")
 		})
 	}
 }

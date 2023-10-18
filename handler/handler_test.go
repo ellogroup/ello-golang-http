@@ -53,6 +53,7 @@ func TestNew(t *testing.T) {
 
 			handler(writerMock, r)
 
+			writerMock.AssertExpectations(t)
 			logCoreMock.AssertNumberOfCalls(t, "Enabled", tt.wantErrorsLogged)
 		})
 	}

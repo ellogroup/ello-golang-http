@@ -65,9 +65,11 @@ func TestNewAssertJsonPayloadMiddleware(t *testing.T) {
 
 			writerMock := new(mock.ResponseWriter)
 			headers := http.Header(map[string][]string{})
-			writerMock.On("Header").Return(headers)
-			writerMock.On("WriteHeader", tt.wantStatusCodeWritten).Once()
-			writerMock.On("Write", testifymock.Anything).Return(1, nil).Maybe()
+			if tt.wantStatusCodeWritten > 0 {
+				writerMock.On("Header").Return(headers)
+				writerMock.On("WriteHeader", tt.wantStatusCodeWritten).Once()
+				writerMock.On("Write", testifymock.Anything).Return(1, nil).Maybe()
+			}
 
 			logCoreMock := new(mock.ZapCore)
 			logCoreMock.On("Enabled", zap.DebugLevel).Return(true).Maybe()
@@ -85,6 +87,7 @@ func TestNewAssertJsonPayloadMiddleware(t *testing.T) {
 
 			assert.Equalf(t, tt.wantNextCalled, nextCalled, "nextCalled")
 
+			writerMock.AssertExpectations(t)
 			logCoreMock.AssertNumberOfCalls(t, "Enabled", tt.wantLogCount)
 		})
 	}

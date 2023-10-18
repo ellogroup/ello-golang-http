@@ -184,6 +184,8 @@ func TestResponse_WriteTo(t *testing.T) {
 			}
 
 			assert.Equalf(t, tt.wantHeader, headers, "WriteTo().Header")
+
+			writerMock.AssertExpectations(t)
 		})
 	}
 }
