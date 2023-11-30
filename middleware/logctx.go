@@ -8,9 +8,13 @@ import (
 	"time"
 )
 
-// TODO: Comment description
-// TODO: Tests
-// NewLogCtxMiddleware TODO
+// NewLogCtxMiddleware returns a handler to be used as middleware. This middleware will add details of the request to
+// the context of the request using github.com/ellogroup/ello-golang-ctx/logctx. This context can then be used to enrich
+// log entries with the details of the request. Once the request is complete, the details of the completed request will
+// also be logged out.
+//
+// If used, it is recommended this is one of the first middleware in the chain so all following processes have access
+// to the request details. However, the request id middleware should always come _before_ this middleware.
 func NewLogCtxMiddleware(log *zap.Logger) func(http.Handler) http.Handler {
 	return func(next http.Handler) http.Handler {
 		return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
