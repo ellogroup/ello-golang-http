@@ -1,6 +1,6 @@
 # Ello Go HTTP packages
 
-Common packages for handling HTTP requests and returning responses
+Common packages for handling HTTP requests and returning responses.
 
 ## handler
 
@@ -21,7 +21,16 @@ Some common middleware for use with the `net/http` package.
 Returns a middleware handler that asserts the HTTP request has a JSON payload by checking the `Content-Type` header. 
 Returns a `http.StatusUnsupportedMediaType` (415) response on failure.
 
+### middleware.NewLogCtxMiddleware
+
+Returns a middleware handler that adds [LogCtx](https://github.com/ellogroup/ello-golang-ctx) to the context of the 
+request. The `LogCtx` contains context of the request, including method, URI and request ID (if available), which can be 
+attached to log entries. After the request has been processed a log entry will be written with additional context 
+including status code and response time.
+
 ### middleware.NewZapLoggerMiddleware
+
+**Deprecated. Please use LogCtxMiddleware.**
 
 Returns a middleware handler that adds a (zap) logger to the context of the request. The logger contains context of the 
 request, including method, URI and request ID (if available), which will be attached to log entries. After the request 
