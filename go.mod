@@ -3,7 +3,7 @@ module github.com/ellogroup/ello-golang-http
 go 1.22
 
 require (
-	github.com/ellogroup/ello-golang-ctx v1.0.0
+	github.com/ellogroup/ello-golang-ctx v1.0.1
 	github.com/go-chi/chi/v5 v5.0.12
 	github.com/go-playground/validator/v10 v10.18.0
 	github.com/google/uuid v1.6.0

@@ -1,8 +1,8 @@
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
-github.com/ellogroup/ello-golang-ctx v1.0.0 h1:Q30ce58MzK3rYy7q/OuKdAkDUs2oYdhTjYqYFgQ4XCk=
-github.com/ellogroup/ello-golang-ctx v1.0.0/go.mod h1:AJmSenQRtkHI6pP5e9NwXjlIzWm5tbkojgB9RLM08Z0=
+github.com/ellogroup/ello-golang-ctx v1.0.1 h1:SQykb0wqtxphUoAmsnnz4qWP2Vy98ow6yQdxA9AOHw4=
+github.com/ellogroup/ello-golang-ctx v1.0.1/go.mod h1:Y+COH/sCpt3nHMXnDlAI0zpZ9AwlTxMtQ7qQyru/OSI=
 github.com/gabriel-vasile/mimetype v1.4.3 h1:in2uUcidCuFcDKtdcBxlR0rJ1+fsokWf+uqxgUFjbI0=
 github.com/gabriel-vasile/mimetype v1.4.3/go.mod h1:d8uq/6HKRL6CGdk+aubisF/M5GcPfT7nKyLpA0lbSSk=
 github.com/go-chi/chi/v5 v5.0.12 h1:9euLV5sTrTNTRUU9POmDUvfxyj6LAABLUcEWO+JJb4s=
